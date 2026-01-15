@@ -15,8 +15,14 @@ p {
 	line-height: 26px;
 }
 
+/*
 a {
 	color: #ff6;
+}
+*/
+
+a {
+	color: #162aa8;
 }
 
 a:hover {
@@ -247,7 +253,7 @@ ul {
 
 .b-blue {
   margin-bottom: -2px;
-  background-image: url(../img/first-bg.png);
+  background-image: url(../img/first-bg-bofc.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -256,7 +262,7 @@ ul {
 }
 
 .b-red {
-  background-image: url(../img/second-bg.png);
+  background-image: url(../img/second-bg-bofc.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -267,7 +273,7 @@ ul {
 
 .b-green {
   margin-top: -2px;
-  background-image: url(../img/third-bg.png);
+  background-image: url(../img/first-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -374,7 +380,7 @@ ul {
 }
 
 .about-content .heading {
-  padding-top: 40%;
+  padding-top: 20%;
 }
 
 .about-box-content {
@@ -420,7 +426,6 @@ ul {
   -o-transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
 }
-
 
 
 /*
@@ -705,6 +710,9 @@ ul {
   }
   .contact-content .heading {
     padding-top: 15%;
+  }
+  .blue-link {
+    color: blue;
   }
 }
 
