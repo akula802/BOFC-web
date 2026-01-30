@@ -14,8 +14,10 @@ jobs:
         #install -m 600 -D /dev/null ~/.ssh/bofc
         #echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/bofc
         #ssh-keyscan -H "${{ secrets.SSH_HOST }}" > ~/.ssh/known_hosts
+    - name: Install sshpass
+      run: sudo apt-get install -y sshpass
     - name: Connect and pull
-      #run: sshpass -p ${{ secrets.NFSN_PASSWORD }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
-      run: sshpass -p ${{ secrets.NFSN_PASSWORD }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
+      run: sshpass -p ${{ secrets.NFSN_PASSWORD }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
+      #run: sshpass -p ${{ secrets.NFSN_PASSWORD }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
     #- name: Cleanup
       #run: rm -rf ~/.ssh
