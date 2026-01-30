@@ -17,7 +17,11 @@ jobs:
     - name: Install sshpass
       run: sudo apt-get install -y sshpass
     - name: Connect and pull
-      run: sshpass -p ${{ secrets.NFSN_PASSWORD }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
-      #run: sshpass -p ${{ secrets.NFSN_PASSWORD }} ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "git checkout ${{ secrets.MAIN_BRANCH }} && git pull && exit"
+      run: |
+        sshpass -p "${{ secrets.NFSN_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << EOF
+        cd ${{ secrets.WORK_DIR }}
+        git checkout ${{ secrets.MAIN_BRANCH }}
+        git pull
+        exit
     #- name: Cleanup
       #run: rm -rf ~/.ssh
