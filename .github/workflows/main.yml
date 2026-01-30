@@ -19,9 +19,10 @@ jobs:
     - name: Connect and pull
       run: |
         sshpass -p "${{ secrets.NFSN_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << EOF
-        cd ${{ secrets.WORK_DIR }}
-        git checkout ${{ secrets.MAIN_BRANCH }}
-        git pull
-        exit
+          cd ${{ secrets.WORK_DIR }}
+          git checkout ${{ secrets.MAIN_BRANCH }}
+          git pull
+          exit
+        EOF
     #- name: Cleanup
       #run: rm -rf ~/.ssh
